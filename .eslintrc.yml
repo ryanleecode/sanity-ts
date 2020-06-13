@@ -1,0 +1,39 @@
+extends:
+  [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+  ]
+plugins: ["@typescript-eslint", "jest", "prettier"]
+env:
+  browser: false
+  es6: true
+  node: true
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+rules:
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+    - avoidEscape: true
+      allowTemplateLiterals: true
+  semi:
+    - error
+    - never
+  object-curly-spacing:
+    - warn
+    - always
+  "no-useless-escape":
+    - off
+  "@typescript-eslint/no-non-null-assertion":
+    - off
