@@ -1,0 +1,30 @@
+{
+  "name": "@sanity-ts/node",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Ryan Lee <drdgvhbh@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "fp-ts": "^2.6.5",
+    "io-ts": "^2.2.4"
+  }
+}
