@@ -1,0 +1,6 @@
+src
+*.js
+*.json
+*.tgz
+__tests__
+.vscode

@@ -1,0 +1,42 @@
+{
+  "name": "@sanity-ts/fetch",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Ryan Lee <drdgvhbh@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/lib/index.js",
+  "module": "dist/es6/index.js",
+  "typings": "dist/lib/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prettier": "prettier --list-different \"./{src,test,examples,scripts}/**/*.ts\"",
+    "fix-prettier": "prettier --write \"./{src,test,examples,scripts}/**/*.ts\"",
+    "jest": "jest",
+    "test": "npm run lint && npm run prettier && npm run jest-clear-cache && npm run jest && npm run docs",
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc -p ./tsconfig.build.json && tsc -p ./tsconfig.build-es6.json",
+    "postbuild": "prettier --loglevel=silent --write \"./dist/**/*.ts\"",
+    "docs": "docs-ts",
+    "prerelease": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "docs-ts": "^0.5.1",
+    "jest": "^26.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "type-fest": "^0.15.1",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "fp-ts": "^2.6.5",
+    "@sanity-ts/fetcher": "^0.0.0"
+  }
+}
